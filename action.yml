@@ -1,0 +1,11 @@
+name: 'cyberduck-cli'
+description: 'Cyberduck for the command line interface (CLI).'
+inputs:
+  command:
+    description: 'Command'
+    required: true
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/iterate-ch/cyberduck:latest'
+  args:
+    - ${{ inputs.command }}
