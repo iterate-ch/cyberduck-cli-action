@@ -1,4 +1,4 @@
-# Cyberduck Cli Github Action
+# Cyberduck CLI Github Action
 
 The universal file transfer tool duck which runs in your shell on Linux and OS X or your Windows command line prompt now for Github Actions conveniently in a docker container.
 
