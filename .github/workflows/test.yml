@@ -1,0 +1,17 @@
+name: Test
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - id: duck
+        uses: ./
+        with:
+          mode: list
+          url: 'file:$GITHUB_WORKSPACE'
+      - run: echo ${{steps.duck.outputs.log}}

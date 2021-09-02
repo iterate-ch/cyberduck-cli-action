@@ -47,6 +47,10 @@ with:
 ```
 
 #### Download
+*Requires URL*
+
+Downloads element specified at `URL` to path relative to workspace.
+
 ```
 with:
   mode: download
@@ -78,7 +82,7 @@ with:
 ```
 
 ### URL
-URL to remote file or directory. Check `docker run ghcr.io/iterate-ch/cyberduck --help` for supported protocols.
+URL to remote file or directory. Check `duck --help`/`docker run ghcr.io/iterate-ch/cyberduck --help` for supported protocols.
 
 ### Path
 Path to local file or directory, relative to `/github/workspace`.
@@ -91,10 +95,6 @@ Username to use for authentication against remote.
 ### Password
 Password to use for authentication against remote.
 
-### Command
-Refer to `duck --help` / `docker run --rm -it ghcr.io/iterate-ch/cyberduck:latest --help`.
-Include Username (`-u`) and Password (`-p`) for authenticated uploads.
-
 ## Outputs
 
 ### Log
@@ -105,6 +105,9 @@ Returns full log (quiet, output only) in a multiline string.
 ```
 uses: iterate-ch/cyberduck-cli-action@main
 id: upload-artifacts
+env:
+  USERNAME=${{secrets.S3_ACCESS_KEY}}
+  PASSWORD=${{secrets.S3_SECRET_KEY}}
 with:
   mode: upload
   url: 's3:/bucket/path'
