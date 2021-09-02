@@ -1,11 +1,21 @@
 name: 'cyberduck-cli'
 description: 'Cyberduck for the command line interface (CLI).'
 inputs:
-  command:
-    description: 'Command'
+  mode:
+    description: 'Mode to run'
     required: true
+  url:
+    description: 'Remote URL'
+    required: true
+  path:
+    description: 'Local relative path'
+    required: false
+  args:
+    description: 'Additional arguments'
+    required: false
+outputs:
+  log:
+    description: "Cyberduck CLI output"
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/iterate-ch/cyberduck:latest'
-  args:
-    - ${{ inputs.command }}
+  image: 'Dockerfile'
