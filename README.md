@@ -70,6 +70,17 @@ with:
   url: 's3:/bucket/prefix/object'
 ```
 
+#### Purge
+*Requires Purge*
+
+Purges CDN configuration.
+
+```
+with:
+  mode: purge
+  url: 's3:/bucket'
+```
+
 #### Raw
 Technically requires nothing, though github action requires setting `url`-parameter. You can refer to that through `$INPUT_URL`.
 Use `args` as raw command to `duck`.

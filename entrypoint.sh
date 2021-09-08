@@ -15,6 +15,7 @@ OPERATION="--download $INPUT_URL";
 [[ ! -z $INPUT_PATH ]] && OPERATION="$OPERATION \"$INPUT_PATH\"";
 ;;
     delete) OPERATION="--delete $INPUT_URL";;
+    purge) OPERATION="--purge $INPUT_URL";;
 	*) exit 1;;
 esac
 
