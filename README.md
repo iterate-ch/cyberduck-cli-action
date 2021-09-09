@@ -8,7 +8,7 @@ The universal file transfer tool duck which runs in your shell on Linux and OS X
 
 ```
 with:
-  mode: 'list|longlist|upload|download|delete'
+  mode: 'list|longlist|upload|download|delete|purge|raw'
 ```
 
 #### List
