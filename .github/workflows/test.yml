@@ -13,5 +13,5 @@ jobs:
         uses: ./
         with:
           mode: list
-          url: 'file:$GITHUB_WORKSPACE'
+          url: 'file:${{ github.workspace }}'
       - run: echo "${{ steps.duck.outputs.log }}"
