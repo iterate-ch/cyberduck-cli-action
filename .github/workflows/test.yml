@@ -14,4 +14,4 @@ jobs:
         with:
           mode: list
           url: 'file:$GITHUB_WORKSPACE'
-      - run: echo ${{steps.duck.outputs.log}}
+      - run: echo "${{ steps.duck.outputs.log }}"
