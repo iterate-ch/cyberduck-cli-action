@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -l
 
 [[ -z $INPUT_URL ]] && exit 1
 
