@@ -36,27 +36,25 @@ with:
 #### Upload
 *Requires URL, Path*
 
-Uploads Path (relative to workspace) to URL, add `--recurse` in `args`
+Uploads Path (relative to workspace) to URL recursively.
 
 ```
 with:
   mode: upload
   url: 's3:/'
   path: 'bin/Release/*'
-  args: '--recurse'
 ```
 
 #### Download
 *Requires URL*
 
-Downloads element specified at `URL` to path relative to workspace.
+Downloads element specified at `URL` to path relative to workspace recursively.
 
 ```
 with:
   mode: download
   url: 's3:/'
   path: 'artifacts/'
-  args: '--recurse'
 ```
 
 #### Delete
