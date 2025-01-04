@@ -94,13 +94,16 @@ URL to remote file or directory. Check `duck --help`/`docker run ghcr.io/iterate
 ### Path
 Path to local file or directory, relative to `/github/workspace`.
 
-## Required Environment Variables
+## Supported Environment Variables
 
-### Username
+### USERNAME
 Username to use for authentication against remote.
 
-### Password
+### PASSWORD
 Password to use for authentication against remote.
+
+### IDENTITY
+Path to private key file for public key authentication
 
 ## Outputs
 

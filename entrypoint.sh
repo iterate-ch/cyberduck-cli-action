@@ -17,8 +17,14 @@ OPERATION="--download $INPUT_URL";
 	*) exit 1;;
 esac
 
-if !([ -z $USERNAME ] || [ -z $PASSWORD ]); then
-OPERATION="$OPERATION --username \"$USERNAME\" --password \"$PASSWORD\""
+if !([ -z $USERNAME ]); then
+OPERATION="$OPERATION --username \"$USERNAME\""
+fi
+if !([ -z $PASSWORD ]); then
+OPERATION="$OPERATION --password \"$PASSWORD\""
+fi
+if !([ -z $IDENTITY ]); then
+OPERATION="$OPERATION --identity \"$IDENTITY\""
 fi
 
 log=$(duck -q -y $OPERATION $INPUT_ARGS)
