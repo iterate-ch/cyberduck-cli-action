@@ -82,13 +82,11 @@ with:
 ```
 
 #### Raw
-Technically requires nothing, though github action requires setting `url`-parameter. You can refer to that through `$INPUT_URL`.
 Use `args` as raw command to `duck`.
 
 ```
 with:
   mode: raw
-  url: ''
   args: '--help'
 ```
 

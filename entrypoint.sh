@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-[[ -z $INPUT_URL ]] && exit 1
-
 case $INPUT_MODE in
 	raw) ;;
 	list) OPERATION="--list $INPUT_URL";;
