@@ -14,7 +14,7 @@ with:
 #### List
 *Requires URL*
 
-Returns a flat name-list in outputs.log
+Returns a flat name-list in `jobs.<job_id>.outputs.log`.
 
 ```
 with:
@@ -25,7 +25,7 @@ with:
 #### Long List
 *Requires URL*
 
-Returns a detailed name-list in outputs.log
+Returns a detailed name-list in `jobs.<job_id>.outputs.log`.
 
 ```
 with:
