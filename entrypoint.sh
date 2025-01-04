@@ -24,7 +24,11 @@ OPERATION="$OPERATION --username \"$USERNAME\" --password \"$PASSWORD\""
 fi
 
 log=$(duck -q -y $OPERATION $INPUT_ARGS)
+exitcode=$?
+
 log="${log//'%'/'%25'}"
 log="${log//$'\n'/'%0A'}"
 log="${log//$'\r'/'%0D'}"
 echo "::set-output name=log::$log"
+
+exit $exitcode;
