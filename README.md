@@ -96,14 +96,16 @@ Path to local file or directory, relative to `/github/workspace`.
 
 ## Supported Environment Variables
 
+The following [environment variable names](https://docs.github.com/en/enterprise-cloud@latest/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsenv) are supported to be passed as part of the job.
+
 ### USERNAME
-Username to use for authentication against remote.
+Username to use for authentication with server passed to Cyberduck CLI with `--username`.
 
 ### PASSWORD
-Password to use for authentication against remote.
+Password to use for authentication with server passed to Cyberduck CLI  with `--password`.
 
 ### IDENTITY
-Path to private key file for public key authentication
+Path to private key file for public key authentication with server passed to Cyberduck CLI  with `--identity`.
 
 ## Outputs
 
@@ -116,8 +118,8 @@ Returns full log (quiet, output only) in a multiline string.
 uses: iterate-ch/cyberduck-cli-action@main
 id: upload-artifacts
 env:
-  USERNAME=${{secrets.S3_ACCESS_KEY}}
-  PASSWORD=${{secrets.S3_SECRET_KEY}}
+  USERNAME: ${{secrets.S3_ACCESS_KEY}}
+  PASSWORD: ${{secrets.S3_SECRET_KEY}}
 with:
   mode: upload
   url: 's3:/bucket/path'
