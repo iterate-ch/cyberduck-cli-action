@@ -30,9 +30,8 @@ fi
 log=$(duck -q -y $OPERATION $INPUT_ARGS)
 exitcode=$?
 
-log="${log//'%'/'%25'}"
-log="${log//$'\n'/'%0A'}"
-log="${log//$'\r'/'%0D'}"
-echo "::set-output name=log::$log"
+echo 'log<<EOF' >> $GITHUB_OUTPUT
+echo $log >> $GITHUB_OUTPUT
+echo 'EOF' >> $GITHUB_OUTPUT
 
 exit $exitcode;
