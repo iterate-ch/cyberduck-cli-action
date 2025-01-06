@@ -13,6 +13,6 @@ jobs:
         uses: ./
         with:
           mode: list
-          url: 'file:${{ github.workspace }}'
+          url: 'file:./'
           args: '--verbose --debug'
       - run: echo "${{ steps.duck.outputs.log }}"
