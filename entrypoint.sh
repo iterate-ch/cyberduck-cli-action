@@ -31,7 +31,7 @@ log=$(duck -q -y $OPERATION $INPUT_ARGS)
 exitcode=$?
 
 echo 'log<<EOF' >> $GITHUB_OUTPUT
-echo $log >> $GITHUB_OUTPUT
+echo "$log" >> $GITHUB_OUTPUT
 echo 'EOF' >> $GITHUB_OUTPUT
 
 exit $exitcode;
