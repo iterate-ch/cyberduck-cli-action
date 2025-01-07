@@ -1,5 +1,8 @@
 name: 'cyberduck-cli'
 description: 'Cyberduck for the command line interface (CLI).'
+branding:
+  icon: 'upload-cloud'
+  color: 'yellow'
 inputs:
   mode:
     description: 'Mode to run'
