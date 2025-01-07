@@ -6,11 +6,11 @@ case $INPUT_MODE in
 	longlist) OPERATION="--longlist $INPUT_URL";;
 	upload)
 OPERATION="--upload $INPUT_URL";
-[[ ! -z $INPUT_PATH ]] && OPERATION="$OPERATION \"$INPUT_PATH\"";
+[[ ! -z $INPUT_PATH ]] && OPERATION="$OPERATION $INPUT_PATH";
 ;;
 	download)
 OPERATION="--download $INPUT_URL";
-[[ ! -z $INPUT_PATH ]] && OPERATION="$OPERATION \"$INPUT_PATH\"";
+[[ ! -z $INPUT_PATH ]] && OPERATION="$OPERATION $INPUT_PATH";
 ;;
     delete) OPERATION="--delete $INPUT_URL";;
     purge) OPERATION="--purge $INPUT_URL";;
