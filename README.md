@@ -109,24 +109,25 @@ Path to private key file for public key authentication with server passed to Cyb
 
 ## Outputs
 
-### Log
-Returns full log (quiet, output only) in a multiline string.
+### `jobs.<job_id>.outputs.log`
+Returns full log [output](https://docs.github.com/en/actions/sharing-automations/creating-actions/metadata-syntax-for-github-actions#outputsoutput_id) (quiet, output only) in a multiline string.
 
 ## Example Usage
 
-```
-uses: iterate-ch/cyberduck-cli-action@main
-id: upload-artifacts
-env:
-  USERNAME: ${{secrets.S3_ACCESS_KEY}}
-  PASSWORD: ${{secrets.S3_SECRET_KEY}}
-with:
-  mode: upload
-  url: 's3:/bucket/path'
-  path: 'target/Release/*'
-```
+ * Upload contents of a directory to a S3 bucket passing [secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) for authorization
+    ```
+    uses: iterate-ch/cyberduck-cli-action@main
+    id: upload-artifacts
+    env:
+      USERNAME: ${{secrets.S3_ACCESS_KEY}}
+      PASSWORD: ${{secrets.S3_SECRET_KEY}}
+    with:
+      mode: upload
+      url: 's3:/bucket/path/'
+      path: 'target/Release/*'
+    ```
 
-Using output:
-```
-run: echo ${{ steps.upload.artifacts.outputs.log }}
-```
+* Using output:
+   ```
+   run: echo ${{ steps.upload.artifacts.outputs.log }}
+   ```
