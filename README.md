@@ -91,7 +91,7 @@ with:
 ```
 
 ### URL
-URL to remote file or directory. Check `duck --help`/`docker run ghcr.io/iterate-ch/cyberduck --help` for supported protocols.
+URL to remote file or directory. Check `duck --help` or `docker run ghcr.io/iterate-ch/cyberduck --help` for supported protocols.
 
 ### Path
 Path to local file or directory, relative to `/github/workspace`.
