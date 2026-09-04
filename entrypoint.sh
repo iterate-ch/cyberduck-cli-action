@@ -27,8 +27,17 @@ if !([ -z $IDENTITY ]); then
 OPERATION="$OPERATION --identity \"$IDENTITY\""
 fi
 
-log=$(duck -q -y $OPERATION $INPUT_ARGS)
-exitcode=$?
+# Run duck, streaming combined stdout/stderr to the console while capturing it
+# for the `log` output. Without the tee the output is swallowed into the step
+# output and a failure shows up with an empty log.
+ if [[ -n "${USERNAME:-}" ]]; then
+   echo "::add-mask::$USERNAME"
+ fi
+ if [[ -n "${PASSWORD:-}" ]]; then
+   echo "::add-mask::$PASSWORD"
+ fi
+log=$(duck -q -y $OPERATION $INPUT_ARGS 2>&1 | tee /dev/stderr)
+exitcode=${PIPESTATUS[0]}
 
 echo 'log<<EOF' >> $GITHUB_OUTPUT
 echo "$log" >> $GITHUB_OUTPUT
