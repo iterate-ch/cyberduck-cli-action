@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# duck's exit code must survive `log=$(duck ... | tee ...)`. Without pipefail,
+# PIPESTATUS reflects the pipeline *inside* the command substitution subshell,
+# which the outer shell never sees — the assignment itself always "succeeds",
+# so $exitcode below is silently 0 even when duck failed.
+set -o pipefail
+
 case $INPUT_MODE in
 	raw) ;;
 	list) OPERATION="--list $INPUT_URL";;
